@@ -1,5 +1,5 @@
 export default function Header() {
     return (
-        <div>header</div>
+        <h1>National Parks Hiking Journal</h1>
     )
 }

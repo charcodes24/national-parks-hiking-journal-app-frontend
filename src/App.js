@@ -18,11 +18,15 @@ function App() {
         setParks(data.national_parks)})
 }, []);
 
+function addPark(newPark) {
+  setParks((mostUpdatedParks) => [...mostUpdatedParks, newPark])
+}
+
   return (
     <Router>
       <Route exact path="/">
         <Header />
-        <AddParkForm />
+        <AddParkForm addPark={addPark}/>
         <Container parks={parks} />
       </Route>
       <Route path="/park/:id">
