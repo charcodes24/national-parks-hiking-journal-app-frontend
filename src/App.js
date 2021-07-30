@@ -34,8 +34,8 @@ function deletePark(id) {
         <AddParkForm addPark={addPark}/>
         <Container parks={parks} deletePark={deletePark}/>
       </Route>
-      <Route path="/park/:id">
-        <FullCard />
+      <Route path="/park/:name">
+        <FullCard parks={parks}/>
       </Route>
     </Router>
   );

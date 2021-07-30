@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Card({ park, deletePark }) {
     const { id, name, image } = park
 
@@ -12,6 +14,7 @@ export default function Card({ park, deletePark }) {
         <div>
             <img src={image} alt={name} />
             <h4>{name}</h4>
+            <Link to={`/park/${name}`}><button>Hikes</button></Link>
             <button onClick={handleDelete}>Delete Park</button>
         </div>
     )
