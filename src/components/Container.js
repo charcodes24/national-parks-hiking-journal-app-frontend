@@ -1,5 +1,17 @@
-export default function Container() {
+import Card from "./Card"
+
+export default function Container({ parks }) {
+
+    const displayParks = parks.map((park, i) => {
+        return <Card
+            key={i}
+            park={park}
+            />
+    })
+    
     return (
-        <div>hi</div>
+        <div>
+            {displayParks}
+        </div>
     )
 }
