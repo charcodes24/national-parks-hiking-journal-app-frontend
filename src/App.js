@@ -22,12 +22,17 @@ function addPark(newPark) {
   setParks((mostUpdatedParks) => [...mostUpdatedParks, newPark])
 }
 
+function deletePark(id) {
+  let updatedParks = parks.filter((park) => park.id !== id)
+  setParks(updatedParks)
+}
+
   return (
     <Router>
       <Route exact path="/">
         <Header />
         <AddParkForm addPark={addPark}/>
-        <Container parks={parks} />
+        <Container parks={parks} deletePark={deletePark}/>
       </Route>
       <Route path="/park/:id">
         <FullCard />
