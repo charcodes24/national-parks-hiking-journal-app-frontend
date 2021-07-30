@@ -13,8 +13,6 @@ export default function AddParkForm({ addPark }) {
         })
     }
 
-    console.log(setAddParkForm)
-
     function handleSubmit(e) {
         e.preventDefault();
         fetch('http://localhost:9393/national_parks', {
