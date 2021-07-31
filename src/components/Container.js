@@ -11,7 +11,7 @@ export default function Container({ parks, deletePark }) {
     })
     
     return (
-        <div>
+        <div className="ui four column grid centered">
             {displayParks}
         </div>
     )

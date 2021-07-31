@@ -1,5 +1,5 @@
 export default function Header() {
     return (
-        <h1>National Parks Hiking Journal</h1>
+        <h1 className="header">National Parks Hiking Journal</h1>
     )
 }

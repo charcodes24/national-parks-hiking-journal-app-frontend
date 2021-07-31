@@ -27,7 +27,7 @@ export default function FullCard({ parks }) {
                                 .map((park, index) => {
                                     return (
                                         <div key={index}>
-                                            <img src={park.image} alt={park.name}/>
+                                            <img class="ui medium centered rounded image" src={park.image} alt={park.name}/>
                                             <h1>Hikes I've Done in: {park.name}</h1>
                                         </div>
                                     )
@@ -43,9 +43,13 @@ export default function FullCard({ parks }) {
 
     return (
         <div>
-            {filteredPark}
-            <AddHikeForm addHike={addHike} name={name}/>
-            {displayHikes}
+            <div>
+                {filteredPark}
+                <AddHikeForm addHike={addHike} name={name}/>
+            </div>
+            <div className="ui raised centered cards">
+                {displayHikes}
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +10,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Nanum Gothic Coding', monospace !important;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin-top: 3%;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+div.card {
+  width: max-content;
+  height: fit-content;
+}
+
+.ui.medium.image, .ui.medium.images .image, .ui.medium.images img, .ui.medium.images svg {
+  width: 300px;
+  /* height: auto; */
+  height: 400px;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+button {
+  width: 8.5em;
+}
+
+.ui.fluid.card {
+  padding: 3.5px;
+}
+
+.park {
+  font-size: 25px;
+}
+
+.header {
+  font-size: 40px;
+}
+
+.ui.card:last-child {
+  margin: 1em 0;
+}
+
+.ui.card:first-child {
+  margin: 1em 0;
 }

@@ -13,3 +13,19 @@ button {
 ul {
   list-style-type: none;
 }
+
+.class {
+  flex-direction: row;
+}
+
+.add {
+  display: flex;
+}
+
+.searchbar {
+  display: flex;
+  margin-top: 3%;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+}

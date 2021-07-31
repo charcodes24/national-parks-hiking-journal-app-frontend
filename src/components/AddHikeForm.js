@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function AddHikeForm({ addHike, name }) {
     const [addHikeForm, setAddHikeForm] = useState({
         name: "", 
-        distance: 0, 
+        distance: null, 
         difficulty: "",
         note: ""
     })
@@ -39,16 +39,16 @@ export default function AddHikeForm({ addHike, name }) {
     }
 
     return (
-        <div>
-            <h4>Add Hike</h4>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" name="name" value={addHikeForm.name} placeholder="Enter name..." />
-                <input onChange={handleChange} type="text" name="distance" value={addHikeForm.distance} placeholder="Add distance..." />
-                <input onChange={handleChange} type="text" name="difficulty" value={addHikeForm.difficulty} placeholder="Add difficulty..." />
-                <br/>
-                <textarea onChange={handleChange} type="text" name="note" value={addHikeForm.note} placeholder="Add note..." />
-                <button type="submit">Add Park</button>
-            </form>
+        <div className="parent">
+                <div className="child">
+                <h4>Add Hike</h4>
+                <form className="ui form searchbar" onSubmit={handleSubmit}>
+                    <input onChange={handleChange} type="text" name="name" value={addHikeForm.name} placeholder="Enter name..." />
+                    <input onChange={handleChange} type="text" name="distance" value={addHikeForm.distance} placeholder="Add distance..." />
+                    <input onChange={handleChange} type="text" name="note" value={addHikeForm.note} placeholder="Add note..." />
+                    <button className="ui olive button" type="submit">Add Hike</button>
+                </form>
+            </div>
         </div>
     )
 }

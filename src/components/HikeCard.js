@@ -8,14 +8,22 @@ export default function HikeCard({ hike, deleteHike }) {
         deleteHike(id)
     }
     return (
-        <div>
-            <h3>{name}</h3>
-            <ul>
-                <li>{distance} miles</li>
-                <li>{difficulty}</li>
-                <li>{note}</li>
-                <button onClick={handleDelete}>Delete Hike</button>
-            </ul>
+        <div className="card">
+            <div className="content">
+                <h3 className="header">{name}</h3>
+                <p className="description"><strong>Distance:</strong> {distance} miles</p>
+                {/* <p className="description"><strong>Difficulty:</strong> {difficulty}</p> */}
+                <p className="description"><strong>Description:</strong> {note}</p>
+            <div>
+                <button className="ui purple button" onClick={handleDelete}>Delete Hike</button>
+            </div>
+                {/* <ul className="meta">
+                    <li>Distance: {distance} miles</li>
+                    <li>Difficulty: {difficulty}</li>
+                    <li>Note: {note}</li>
+                    <button className="ui bottom attached button" onClick={handleDelete}>Delete Hike</button>
+                </ul> */}
+            </div>
         </div>
     )
 }

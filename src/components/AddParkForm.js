@@ -30,11 +30,10 @@ export default function AddParkForm({ addPark }) {
     }
     return (
         <div>
-            <h4>Add National Park</h4>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" name="name" value={addParkForm.name} placeholder="Enter name..." />
+            <form className="ui form searchbar" onSubmit={handleSubmit}> 
+                <input className="ui input" onChange={handleChange} type="text" name="name" value={addParkForm.name} placeholder="Enter name..." />
                 <input onChange={handleChange} type="text" name="image" value={addParkForm.image} placeholder="Add image..." />
-                <button type="submit">Add Park</button>
+                <button className="ui black button" type="submit">Add Park</button>
             </form>
         </div>
     )
