@@ -41,7 +41,7 @@ export default function AddHikeForm({ addHike, name }) {
     return (
         <div className="parent">
                 <div className="child">
-                <h4>Add Hike</h4>
+                <h4 className="add">Add Hike</h4>
                 <form className="ui form searchbar" onSubmit={handleSubmit}>
                     <input onChange={handleChange} type="text" name="name" value={addHikeForm.name} placeholder="Enter name..." />
                     <input onChange={handleChange} type="text" name="distance" value={addHikeForm.distance} placeholder="Add distance..." />

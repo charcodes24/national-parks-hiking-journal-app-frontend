@@ -14,8 +14,8 @@ export default function HikeCard({ hike, deleteHike }) {
                 <p className="description"><strong>Distance:</strong> {distance} miles</p>
                 {/* <p className="description"><strong>Difficulty:</strong> {difficulty}</p> */}
                 <p className="description"><strong>Description:</strong> {note}</p>
-            <div>
-                <button className="ui purple button" onClick={handleDelete}>Delete Hike</button>
+            <div className="card">
+                <button className="unique ui purple button" onClick={handleDelete}>Delete Hike</button>
             </div>
                 {/* <ul className="meta">
                     <li>Distance: {distance} miles</li>

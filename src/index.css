@@ -69,3 +69,34 @@ button {
 .ui.card:first-child {
   margin: 1em 0;
 }
+
+ui.purple.button {
+    font-size: .7rem;
+}
+
+.ui.card>.content, .ui.cards>.card>.content {
+  height: 15em;
+}
+
+.unique {
+  position: absolute;
+  bottom: 10px;
+  left: 30%
+}
+
+.ui.form {
+  width: 50%;
+  align-items: center;
+}
+
+.add {
+    font-size: 1.5rem;
+    color: hotpink;
+    padding-top: 10px;
+    margin: 0;
+    justify-content: center;
+}
+
+.child {
+  justify-content: center;
+}
