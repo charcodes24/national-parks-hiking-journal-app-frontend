@@ -15,7 +15,7 @@ export default function Card({ park, deletePark }) {
             <div className="ui fluid">
                 <img className="ui medium circular image" src={image} alt={name} />
                 <h4 className="park">{name}</h4>
-                <div>
+                <div className="weird">
                     <Link to={`/park/${name}`}><button className="ui violet button">Hikes</button></Link>
                     <button className="delete ui purple button" onClick={handleDelete}>Delete Park</button>
                 </div>

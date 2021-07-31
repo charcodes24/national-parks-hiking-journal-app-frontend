@@ -3,8 +3,7 @@ import React, { useState } from "react";
 export default function AddHikeForm({ addHike, name }) {
     const [addHikeForm, setAddHikeForm] = useState({
         name: "", 
-        distance: null, 
-        difficulty: "",
+        distance: null,
         note: ""
     })
 
@@ -25,8 +24,7 @@ export default function AddHikeForm({ addHike, name }) {
             body: JSON.stringify({
                 hike: {
                     name: addHikeForm.name, 
-                    distance: addHikeForm.distance, 
-                    difficulty: addHikeForm.difficulty,
+                    distance: addHikeForm.distance,
                     note: addHikeForm.note,
                 }, 
                 park: {
