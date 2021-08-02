@@ -3,9 +3,15 @@ import React, { useState } from "react";
 export default function AddHikeForm({ addHike, name }) {
     const [addHikeForm, setAddHikeForm] = useState({
         name: "", 
-        distance: null,
+        distance: "",
         note: ""
     })
+
+    const defaultForm = {
+        name: "", 
+        distance: "", 
+        note: ""
+    }
 
     function handleChange(e) {
         setAddHikeForm({
@@ -13,6 +19,8 @@ export default function AddHikeForm({ addHike, name }) {
             [e.target.name]: e.target.value
         })
     }
+
+    const newName = name.replaceAll('_', ' ')
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,12 +36,13 @@ export default function AddHikeForm({ addHike, name }) {
                     note: addHikeForm.note,
                 }, 
                 park: {
-                    name: name
+                    name: newName
                 }
             })
         })
         .then(res => res.json())
-        .then(newHike => addHike(newHike))
+        .then((newHike) => addHike(newHike.hike))
+        setAddHikeForm(defaultForm)
     }
 
     return (

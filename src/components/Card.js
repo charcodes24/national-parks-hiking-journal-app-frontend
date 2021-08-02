@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 export default function Card({ park, deletePark }) {
     const { id, name, image } = park
 
+    //take name and remove whitespace
+    const newName = name.replaceAll(' ', '_')
+    console.log(newName)
+
     function handleDelete() {
         fetch(`http://localhost:9393/national_parks/${id}`, {
             method: "DELETE"
@@ -16,7 +20,7 @@ export default function Card({ park, deletePark }) {
                 <img className="ui medium circular image" src={image} alt={name} />
                 <h4 className="park">{name}</h4>
                 <div className="weird">
-                    <Link to={`/park/${name}`}><button className="ui violet button">Hikes</button></Link>
+                    <Link to={`/park/${newName}`}><button className="ui violet button">Hikes</button></Link>
                     <button className="delete ui purple button" onClick={handleDelete}>Delete Park</button>
                 </div>
             </div>

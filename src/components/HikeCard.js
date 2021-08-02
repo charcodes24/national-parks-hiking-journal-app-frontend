@@ -1,5 +1,5 @@
 export default function HikeCard({ hike, deleteHike }) {
-    const { id, name, distance, difficulty, note } = hike
+    const { id, name, distance, note } = hike
 
     function handleDelete() {
         fetch(`http://localhost:9393/hikes/${id}`, {
@@ -17,12 +17,6 @@ export default function HikeCard({ hike, deleteHike }) {
             <div className="card">
                 <button className="unique ui purple button" onClick={handleDelete}>Delete Hike</button>
             </div>
-                {/* <ul className="meta">
-                    <li>Distance: {distance} miles</li>
-                    <li>Difficulty: {difficulty}</li>
-                    <li>Note: {note}</li>
-                    <button className="ui bottom attached button" onClick={handleDelete}>Delete Hike</button>
-                </ul> */}
             </div>
         </div>
     )

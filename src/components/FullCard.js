@@ -8,6 +8,7 @@ export default function FullCard({ parks }) {
     const [hikes, setHikes] = useState([])
     const { name } = useParams();
 
+
     useEffect(() => {
         fetch(`http://localhost:9393/national_parks/hikes/${name}`)
         .then(res => res.json())
@@ -15,7 +16,7 @@ export default function FullCard({ parks }) {
     }, [name]);
 
     function addHike(newHike) {
-        setHikes((mostUpdatedHikes) => [...mostUpdatedHikes, newHike])
+        setHikes([...hikes, newHike])
     }
 
     function deleteHike(id) {
@@ -27,7 +28,7 @@ export default function FullCard({ parks }) {
                                 .map((park, index) => {
                                     return (
                                         <div key={index}>
-                                            <img class="ui medium centered rounded image" src={park.image} alt={park.name}/>
+                                            <img className="ui medium centered rounded image" src={park.image} alt={park.name}/>
                                             <h1>Hikes I've Done in: {park.name}</h1>
                                         </div>
                                     )
