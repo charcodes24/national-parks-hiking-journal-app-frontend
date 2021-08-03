@@ -14,11 +14,17 @@ export default function AddHikeForm({ addHike, name }) {
     }
 
     function handleChange(e) {
+        if (e.target.name === 'name') {
+            setAddHikeForm({
+                ...addHikeForm, 
+                [e.target.name]: e.target.value.split(' ').map((word) => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+            })
+        } else {
         setAddHikeForm({
             ...addHikeForm, 
             [e.target.name]: e.target.value
         })
-    }
+    }}
 
     const newName = name.replaceAll('_', ' ')
 

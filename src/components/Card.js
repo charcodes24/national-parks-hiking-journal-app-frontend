@@ -5,7 +5,6 @@ export default function Card({ park, deletePark }) {
 
     //take name and remove whitespace
     const newName = name.replaceAll(' ', '_')
-    console.log(newName)
 
     function handleDelete() {
         fetch(`http://localhost:9393/national_parks/${id}`, {

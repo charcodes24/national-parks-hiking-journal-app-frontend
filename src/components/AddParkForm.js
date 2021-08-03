@@ -12,11 +12,18 @@ export default function AddParkForm({ addPark }) {
     }
 
     function handleChange(e) {
+        if (e.target.name === 'name') {
+            console.log(e.target.name)
+            setAddParkForm({
+                ...addParkForm, 
+                [e.target.name]: e.target.value.split(' ').map((word) => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+            })
+        } else {
         setAddParkForm({
             ...addParkForm, 
             [e.target.name]: e.target.value
         })
-    }
+    }}
 
     function handleSubmit(e) {
         e.preventDefault();
