@@ -24,7 +24,8 @@ export default function FullCard({ parks }) {
         setHikes(updatedHikes)
     }
 
-    const filteredPark = parks.filter((park) => park.name === name)
+    const newName = name.replaceAll('_', ' ')
+    const filteredPark = parks.filter((park) => park.name === newName)
                                 .map((park, index) => {
                                     return (
                                         <div key={index}>
