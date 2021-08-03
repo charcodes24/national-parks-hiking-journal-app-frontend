@@ -6,6 +6,11 @@ export default function AddParkForm({ addPark }) {
         image: ""
     })
 
+    const defaultForm = {
+        name: "", 
+        image: ""
+    }
+
     function handleChange(e) {
         setAddParkForm({
             ...addParkForm, 
@@ -15,7 +20,7 @@ export default function AddParkForm({ addPark }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:9393/national_parks', {
+        fetch('http://localhost:9393/national_parks/', {
             method: "POST", 
             headers: {
                 "Content-type": "application/json"
@@ -27,7 +32,9 @@ export default function AddParkForm({ addPark }) {
         })
         .then(res => res.json())
         .then(newPark => addPark(newPark.park))
+        setAddParkForm(defaultForm)
     }
+
     return (
         <div>
             <form className="ui form searchbar" onSubmit={handleSubmit}> 
