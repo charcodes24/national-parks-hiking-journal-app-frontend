@@ -34,7 +34,7 @@ export default function AddHikeForm({ addHike, name }) {
         if (addHikeForm.name.length === 0 || addHikeForm.note.length === 0) {
             setDisplay(!display)
         } else {
-            fetch('http://localhost:9393/add_hikes/', {
+            fetch('http://localhost:9393/hikes/', {
             method: "POST", 
             headers: {
                 "Content-type": "application/json"
@@ -53,6 +53,7 @@ export default function AddHikeForm({ addHike, name }) {
         .then(res => res.json())
         .then((newHike) => addHike(newHike.hike))
         setAddHikeForm(defaultForm)
+        
         } 
     }
 
@@ -67,7 +68,7 @@ export default function AddHikeForm({ addHike, name }) {
                     <button className="ui olive button" type="submit">Add Hike</button>
                 </form>
             </div>
-            {display ? <div className="ui violet message">Please enter a hike name & image!</div> : null}
+            {display ? <div className="ui violet message">Please enter a hike name & description!</div> : null}
         </div>
     )
 }
