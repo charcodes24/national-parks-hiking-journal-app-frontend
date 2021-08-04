@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function AddHikeForm({ addHike, name }) {
+    const [display, setDisplay] = useState(false)
     const [addHikeForm, setAddHikeForm] = useState({
         name: "", 
         distance: "",
@@ -30,7 +31,10 @@ export default function AddHikeForm({ addHike, name }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:9393/add_hikes/', {
+        if (addHikeForm.name.length === 0 || addHikeForm.note.length === 0) {
+            setDisplay(!display)
+        } else {
+            fetch('http://localhost:9393/add_hikes/', {
             method: "POST", 
             headers: {
                 "Content-type": "application/json"
@@ -49,6 +53,7 @@ export default function AddHikeForm({ addHike, name }) {
         .then(res => res.json())
         .then((newHike) => addHike(newHike.hike))
         setAddHikeForm(defaultForm)
+        } 
     }
 
     return (
@@ -62,6 +67,7 @@ export default function AddHikeForm({ addHike, name }) {
                     <button className="ui olive button" type="submit">Add Hike</button>
                 </form>
             </div>
+            {display ? <div className="ui violet message">Please enter a hike name & image!</div> : null}
         </div>
     )
 }

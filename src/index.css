@@ -18,6 +18,12 @@ code {
   font-family: 'Nanum Gothic Coding', monospace !important;
 }
 
+/*styling for addPark & addHike form*/
+.ui.form {
+  width: 50%;
+  align-items: center;
+}
+
 .searchbar {
   display: flex;
   flex-direction: column;
@@ -26,6 +32,29 @@ code {
   margin-left: 25%;
   margin-right: 25%;
   max-width: 50%;
+}
+
+.ui.olive.message {
+  margin-bottom: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+}
+
+.ui.violet.message {
+  margin-bottom: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+}
+
+/*styling for cards in container component*/
+.ui.card:last-child {
+  margin: 1em 0;
+}
+
+.ui.card:first-child {
+  margin: 1em 0;
 }
 
 .container {
@@ -38,12 +67,18 @@ div.card {
   height: fit-content;
 }
 
+/*styling for park images on container.js and alert div*/
 .ui.medium.image, .ui.medium.images .image, .ui.medium.images img, .ui.medium.images svg {
   width: 300px;
-  /* height: auto; */
   height: 400px;
   font-size: 1rem;
   padding-bottom: 10px;
+}
+
+
+/*styling for buttons*/
+ui.purple.button {
+  font-size: .7rem;
 }
 
 button {
@@ -62,18 +97,6 @@ button {
   font-size: 40px;
 }
 
-.ui.card:last-child {
-  margin: 1em 0;
-}
-
-.ui.card:first-child {
-  margin: 1em 0;
-}
-
-ui.purple.button {
-    font-size: .7rem;
-}
-
 .ui.card>.content, .ui.cards>.card>.content {
   height: 15em;
 }
@@ -82,11 +105,6 @@ ui.purple.button {
   position: absolute;
   bottom: 10px;
   left: 30%
-}
-
-.ui.form {
-  width: 50%;
-  align-items: center;
 }
 
 .add {

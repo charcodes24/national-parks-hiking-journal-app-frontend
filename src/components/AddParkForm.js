@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 export default function AddParkForm({ addPark }) {
+    const [display, setDisplay] = useState(false)
     const [addParkForm, setAddParkForm] = useState({
         name: "", 
         image: ""
@@ -27,7 +28,10 @@ export default function AddParkForm({ addPark }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:9393/national_parks/', {
+        if (addParkForm.name.length === 0 || addParkForm.image.length === 0) {
+            setDisplay(!display)
+        } else {
+            fetch('http://localhost:9393/national_parks/', {
             method: "POST", 
             headers: {
                 "Content-type": "application/json"
@@ -40,6 +44,7 @@ export default function AddParkForm({ addPark }) {
         .then(res => res.json())
         .then(newPark => addPark(newPark.park))
         setAddParkForm(defaultForm)
+        }
     }
 
     return (
@@ -49,6 +54,7 @@ export default function AddParkForm({ addPark }) {
                 <input onChange={handleChange} type="text" name="image" value={addParkForm.image} placeholder="Add image..." />
                 <button className="ui black button" type="submit">Add Park</button>
             </form>
+            {display ? <div className="ui olive message">Please enter a park name & image!</div> : null}
         </div>
     )
 }
