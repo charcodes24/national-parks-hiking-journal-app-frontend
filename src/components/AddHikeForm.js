@@ -53,7 +53,6 @@ export default function AddHikeForm({ addHike, name }) {
         .then(res => res.json())
         .then((newHike) => addHike(newHike.hike))
         setAddHikeForm(defaultForm)
-        
         } 
     }
 

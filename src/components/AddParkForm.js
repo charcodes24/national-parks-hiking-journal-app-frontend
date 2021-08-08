@@ -44,7 +44,6 @@ export default function AddParkForm({ addPark }) {
         .then(res => res.json())
         .then(newPark => addPark(newPark.park))
         setAddParkForm(defaultForm)
-        setDisplay(!display)
         }
     }
 
