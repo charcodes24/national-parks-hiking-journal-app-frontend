@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { trackPromise } from 'react-promise-tracker';
 
 import AddHikeForm from './AddHikeForm';
 import HikeCard from './HikeCard';
@@ -10,9 +11,11 @@ export default function FullCard({ parks }) {
 
 
     useEffect(() => {
-        fetch(`http://localhost:9393/national_parks/hikes/${name}`)
-        .then(res => res.json())
-        .then(data => setHikes(data.hikes))
+        trackPromise(
+          fetch(`http://localhost:9393/national_parks/hikes/${name}`)
+            .then((res) => res.json())
+            .then((data) => setHikes(data.hikes))
+        );
     }, [name]);
 
     function addHike(newHike) {
