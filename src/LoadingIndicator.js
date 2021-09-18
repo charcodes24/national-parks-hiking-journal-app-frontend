@@ -6,6 +6,6 @@ export default function LoadingIndicator() {
 
     return (
         promiseInProgress &&
-        <h1>Hang on while we fetch some data real quick...</h1>
+        <h1 className="loading ui orange message">Hang on while we fetch some data real quick...</h1>
     )
 }

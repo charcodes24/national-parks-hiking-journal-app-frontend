@@ -118,3 +118,15 @@ button {
 .child {
   justify-content: center;
 }
+
+.loading {
+  margin-top: 50px;
+}
+
+.ui.orange.message {
+  margin-top: 51px;
+  margin-bottom: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+}
