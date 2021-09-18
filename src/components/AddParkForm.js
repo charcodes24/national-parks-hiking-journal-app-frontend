@@ -48,13 +48,33 @@ export default function AddParkForm({ addPark }) {
     }
 
     return (
-        <div>
-            <form className="ui form searchbar" onSubmit={handleSubmit}> 
-                <input className="ui input" onChange={handleChange} type="text" name="name" value={addParkForm.name} placeholder="Enter name..." />
-                <input onChange={handleChange} type="text" name="image" value={addParkForm.image} placeholder="Add image..." />
-                <button className="ui black button" type="submit">Add Park</button>
-            </form>
-            {display ? <div className="ui olive message">Please enter a park name & image!</div> : null}
-        </div>
-    )
+      <div>
+        <form className="ui form searchbar" onSubmit={handleSubmit}>
+          <input
+            className="ui input"
+            onChange={handleChange}
+            type="text"
+            name="name"
+            value={addParkForm.name}
+            placeholder="Enter name..."
+          />
+          <input
+            className="ui input"
+            onChange={handleChange}
+            type="text"
+            name="image"
+            value={addParkForm.image}
+            placeholder="Add image..."
+          />
+          <button className="ui black button" type="submit">
+            Add Park
+          </button>
+        </form>
+        {display ? (
+          <div className="ui olive message">
+            Please enter a park name & image!
+          </div>
+        ) : null}
+      </div>
+    );
 }

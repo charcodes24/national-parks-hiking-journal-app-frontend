@@ -34,11 +34,13 @@ export default function AddHikeForm({ addHike, name }) {
         if (addHikeForm.name.length === 0 || addHikeForm.note.length === 0) {
             setDisplay(!display)
         } else {
+            //route for fetch request 
             fetch('http://localhost:9393/hikes/', {
             method: "POST", 
             headers: {
                 "Content-type": "application/json"
             }, 
+            //converts object you're sending into a string
             body: JSON.stringify({
                 hike: {
                     name: addHikeForm.name, 
