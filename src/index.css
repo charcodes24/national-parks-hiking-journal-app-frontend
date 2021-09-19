@@ -130,3 +130,9 @@ button {
   margin-right: 25%;
   max-width: 50%;
 }
+
+.ui.blue.message {
+  margin-top: 20%;
+  margin-left: 36%;
+  margin-right: 36%;
+}

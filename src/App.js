@@ -7,7 +7,6 @@ import AddParkForm from './components/AddParkForm';
 import Container from './components/Container';
 import FullCard from './components/FullCard';
 
-import LoadingIndicator from './LoadingIndicator';
 
 import './App.css';
 
@@ -34,7 +33,7 @@ function deletePark(id) {
 }
   
   if (loading) {
-    return <h1 className="ui orange message">Page is loading..</h1>
+    return <h1 className="ui blue message">Page is loading..</h1>
   }
 
   return (
@@ -49,7 +48,6 @@ function deletePark(id) {
           <FullCard parks={parks} />
         </Route>
       </Router>
-      <LoadingIndicator />
     </div>
   );
 }

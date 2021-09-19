@@ -49,7 +49,7 @@ export default function FullCard({ parks }) {
     })
 
     if (loading) {
-        return <h3 className="ui orange message">Page is loading...</h3>
+        return <h3 className="ui blue message">Page is loading...</h3>
     }
     return (
         <div>
