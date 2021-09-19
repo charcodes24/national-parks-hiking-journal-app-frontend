@@ -6,16 +6,18 @@ import AddHikeForm from './AddHikeForm';
 import HikeCard from './HikeCard';
 
 export default function FullCard({ parks }) {
+    const [loading, setLoading] = useState(true)
     const [hikes, setHikes] = useState([])
     const { name } = useParams();
 
 
     useEffect(() => {
-        trackPromise(
-          fetch(`http://localhost:9393/national_parks/hikes/${name}`)
-            .then((res) => res.json())
-            .then((data) => setHikes(data.hikes))
-        );
+        fetch(`http://localhost:9393/national_parks/hikes/${name}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setHikes(data.hikes)
+            setLoading(false)
+        });
     }, [name]);
 
     function addHike(newHike) {
@@ -46,6 +48,9 @@ export default function FullCard({ parks }) {
                 />
     })
 
+    if (loading) {
+        return <h3 className="ui orange message">Page is loading...</h3>
+    }
     return (
         <div>
             <div>

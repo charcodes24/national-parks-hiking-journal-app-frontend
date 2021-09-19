@@ -12,16 +12,16 @@ import LoadingIndicator from './LoadingIndicator';
 import './App.css';
 
 function App() {
+  const [loading, setLoading] = useState(true)
   const [parks, setParks] = useState([])
 
   useEffect(() => {
-    trackPromise(
-      fetch("http://localhost:9393/national_parks/")
-        .then((res) => res.json())
-        .then((data) => {
-          setParks(data.national_parks);
-        })
-    );
+  fetch("http://localhost:9393/national_parks/")
+    .then((res) => res.json())
+    .then((data) => {
+      setParks(data.national_parks);
+      setLoading(false);
+    });
 }, []);
 
 function addPark(newPark) {
@@ -32,6 +32,10 @@ function deletePark(id) {
   let updatedParks = parks.filter((park) => park.id !== id)
   setParks(updatedParks)
 }
+  
+  if (loading) {
+    return <h1 className="ui orange message">Page is loading..</h1>
+  }
 
   return (
     <div>
